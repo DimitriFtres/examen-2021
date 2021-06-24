@@ -11,10 +11,11 @@
     <title>Document</title>
 </head>
 <body>
+<a href="nouvelleTransaction.php">Nouvelle transaction</a>
 <ul>
 <?php
     foreach($liste as $key => $value){
-        echo "<li>".$value[0]." ".$value[1]." ".$value[2]."</li>";
+        echo "<li>".$value[0]." ".$value[1]." ".$value[2]."€ ".$value[3]."</li>";
     }
 ?>
 </ul>

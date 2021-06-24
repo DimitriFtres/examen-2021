@@ -8,10 +8,12 @@ function prendreLestransactionsDuMois($transactions, $contacts){
     $informationParTransaction = array();
     $nom = "";
     $compte = "";
+    $montant = NULL;
     $i = 0;
     foreach($transactions as $key => $value){
         $tabDate = explode('/', $value["date"]);
         if($tabDate[1] == $dateDuJour["mon"]){
+            $montant = $value["montant"];
             if($value["montant"] < 0){
                 foreach($contacts as $k => $v){
                 //nom
@@ -36,7 +38,7 @@ function prendreLestransactionsDuMois($transactions, $contacts){
                 $compte = substr_replace($compte, ' ', 9, 0);
                 $compte = substr_replace($compte, ' ', 14, 0);
                 $informationParTransaction[$i] = array();
-                array_push($informationParTransaction[$i], $value["date"], $nom, $compte);
+                array_push($informationParTransaction[$i], $value["date"], $nom, $montant, $compte);
                 $i++;
 
             }
