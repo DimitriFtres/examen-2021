@@ -23,7 +23,7 @@ function verifications(array $input, $contacts){
     }
     return $verification;
 }
-function ajoutDansLaListe(array $input, $contacts, $transactions){
+function ajoutDansLaListe(array $input, $contacts, &$transactions){
     $toutCEstBienPasse = false;
     if(verifications($input, $contacts)){
         array_push($transaction, $input);
@@ -31,5 +31,4 @@ function ajoutDansLaListe(array $input, $contacts, $transactions){
     }
     return $toutCEstBienPasse;
 }
-verifications($_POST, $contacts);
 
