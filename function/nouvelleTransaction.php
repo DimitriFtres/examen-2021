@@ -26,7 +26,7 @@ function verifications(array $input, $contacts){
 function ajoutDansLaListe(array $input, $contacts, $transactions){
     $toutCEstBienPasse = false;
     if(verifications($input, $contacts)){
-        array_push($transaction, $input));
+        array_push($transaction, $input);
             $toutCEstBienPasse = true;
     }
     return $toutCEstBienPasse;
